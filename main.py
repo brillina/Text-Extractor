@@ -8,12 +8,12 @@ from textblob import TextBlob
 from googletrans import Translator, constants
 from pprint import pprint
 
-filename = 'codeAdaPlain.png'
+filename = 'images\image2.png'
 img1 = np.array(Image.open(filename))
 text = pytesseract.image_to_string(img1)
 print(text)
 
-image = cv2.imread('color.jpg', 0)
+image = cv2.imread('images\image2.png', 0)
 
 
 thresh = cv2.threshold(
