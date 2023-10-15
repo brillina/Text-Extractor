@@ -2,6 +2,11 @@ from PIL import Image
 import pytesseract
 import numpy as np
 import cv2
+from gtts import gTTS
+import os
+from textblob import TextBlob
+from googletrans import Translator, constants
+from pprint import pprint
 
 filename = 'codeAdaPlain.png'
 img1 = np.array(Image.open(filename))
@@ -37,6 +42,16 @@ result = 255 - thresh
 data = pytesseract.image_to_string(result, lang='eng')
 print(data)
 
+# Text to Audio
+myText = data
+language = 'en'
+myObj = gTTS(text=myText, lang=language, slow=False)
+myObj.save("welcome.mp3")
+os.system("start welcome.mp3")
+
+translator = Translator()
+translation = translator.translate(data, dest="es")
+print(f"{translation.origin} ({translation.src}) --> {translation.text} ({translation.dest})")
 # cv2.imshow('thresh', thresh)
 # cv2.imshow('result', result)
 # cv2.waitKey()
