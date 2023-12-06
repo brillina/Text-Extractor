@@ -1,0 +1,17 @@
+from PIL import Image
+import pytesseract
+import numpy as np
+import cv2
+
+filename = '/Users/baobao/Documents/Code Ada/TextExtracter/images/IMG_5701.jpg'
+# img1 = np.array(Image.open(filename))
+
+img1 = cv2.imread(filename, 0)
+text = pytesseract.image_to_string(img1)
+print("testocr2.png: ", text)
+
+
+filename = '/Users/baobao/Documents/Code Ada/TextExtracter/images/codeAdaPlain.png'
+img2 = np.array(Image.open(filename))
+text2 = pytesseract.image_to_string(img2)
+print("codeAdaPlain.png: ", text2)
