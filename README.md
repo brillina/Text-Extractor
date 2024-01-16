@@ -1,4 +1,4 @@
-# Code Ada Team 6
+# Text Extractor (Code Ada)
 
 AI accessibility tool that generates image IDs from any image on the web.
 
